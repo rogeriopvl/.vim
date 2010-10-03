@@ -1,1 +1,4 @@
-colorscheme ir_black
+colorscheme pyte
+if has("gui_running")
+	set guioptions=egmrt
+endif
