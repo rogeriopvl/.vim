@@ -1,4 +1,5 @@
 syntax on
+set ic
 set nu!
 set tabstop=4
 set autoindent
@@ -14,4 +15,8 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 " run php file with php cli 
 autocmd Filetype php noremap <C-M> :w!<CR>:!/usr/bin/php %<CR>
 " check the php syntax
-autocmd Filetype php noremap <C-L> :!/usr/bin/php -l %<CR> 
+autocmd Filetype php noremap <C-L> :!/usr/bin/php -l %<CR>
+
+" enable omnicomplete for php files
+filetype plugin on
+au FileType php set omnifunc=phpcomplete#CompletePHP
