@@ -1,13 +1,24 @@
-syntax on
-set ic
-set nu!
-set tabstop=4
-set autoindent
+set nocompatible
+
+set ignorecase
+set smartcase
+
+set nu! " show line numbers
 set ruler
+set visualbell
+
+set tabstop=4
+set shiftwidth=4
+set autoindent
+set smartindent
+set backspace=start,indent,eol
+
+syntax on
 set background=dark
 colorscheme desert
 set gfn=monaco:h12
-set backspace=start,indent,eol
+
+nmap <silent> <leader>s :set nolist!<CR>
 
 " set spacing scheme for ruby files
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
