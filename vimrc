@@ -2,13 +2,17 @@ set nocompatible
 
 set ignorecase
 set smartcase
+set incsearch
 
 set nu! " show line numbers
+set cursorline
 set ruler
 set visualbell
 
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
+set expandtab
 set autoindent
 set smartindent
 set backspace=start,indent,eol
@@ -18,6 +22,7 @@ set background=dark
 colorscheme desert
 set gfn=monaco:h12
 
+" show/hide all whitespace chars
 nmap <silent> <leader>s :set nolist!<CR>
 
 " set spacing scheme for ruby files
