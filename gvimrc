@@ -1,4 +1,4 @@
-colorscheme phd
+colorscheme macvim
 if has("gui_running")
 	set guioptions=egmrt
 endif
