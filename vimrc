@@ -5,7 +5,6 @@ set smartcase
 set incsearch
 
 set nu! " show line numbers
-set cursorline
 set ruler
 set visualbell
 
