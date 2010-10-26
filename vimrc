@@ -31,5 +31,6 @@ autocmd Filetype php noremap <C-M> :w!<CR>:!/usr/bin/php %<CR>
 autocmd Filetype php noremap <C-L> :!/usr/bin/php -l %<CR>
 
 " enable omnicomplete for php files
+filetype indent on
 filetype plugin on
 au FileType php set omnifunc=phpcomplete#CompletePHP
