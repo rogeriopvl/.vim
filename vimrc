@@ -34,3 +34,5 @@ autocmd Filetype php noremap <C-L> :!/usr/bin/php -l %<CR>
 filetype indent on
 filetype plugin on
 au FileType php set omnifunc=phpcomplete#CompletePHP
+
+au BufRead,BufNewFile *.php set filetype=php.html
