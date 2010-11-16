@@ -10,8 +10,8 @@ let g:colors_name="vilight"
 
 hi Normal         guifg=#b6b6b6           guibg=#212121
 hi Cursor         guifg=#212121           guibg=#9ca9b7
-hi CursorLine	  guifg=#ffffff		      guibg=#6c8095
-hi Directory      guifg=#6c8095            guibg=NONE
+hi CursorLine	  guifg=NONE		      guibg=#333333
+hi Directory      guifg=#6c8095           guibg=NONE
 hi VertSplit      guifg=#b6b6b6           guibg=#a6a6a6
 hi Folded         guifg=#424242           guibg=NONE     gui=italic
 hi FoldColumn	  guifg=#9ca9b7           guibg=NONE     gui=italic
@@ -33,7 +33,7 @@ hi Title	      guifg=#cf6a4c		      guibg=NONE
 
 "Syntax hilight groups
 
-hi Comment        guifg=#424242           gui=italic
+hi Comment        guifg=#555555           gui=italic
 hi Constant       guifg=#7587a6           gui=bold
 hi Exception      guifg=#cf6a4c           gui=NONE
 hi String         guifg=#8f9d6a           gui=NONE
