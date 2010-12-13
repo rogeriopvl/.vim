@@ -1,6 +1,7 @@
 set cursorline
-colorscheme macvim
+colorscheme vilight
 
 if has("gui_running")
-	set guioptions=egmrt
+	"set guioptions=egmrt
+	set guioptions=aAce
 endif

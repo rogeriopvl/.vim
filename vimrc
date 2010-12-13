@@ -1,5 +1,6 @@
 set nocompatible
 
+set enc=utf-8
 set ignorecase
 set smartcase
 set incsearch
