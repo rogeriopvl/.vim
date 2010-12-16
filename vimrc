@@ -1,6 +1,9 @@
 set nocompatible
+set nobackup
 
 set enc=utf-8
+set fileformat=unix
+
 set ignorecase
 set smartcase
 set incsearch
@@ -13,7 +16,8 @@ set tabstop=4
 set shiftwidth=4
 set autoindent
 set smartindent
-set backspace=start,indent,eol
+set smarttab
+set bs=start,indent,eol
 
 syntax on
 set background=dark
