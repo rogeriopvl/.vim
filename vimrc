@@ -1,5 +1,10 @@
+silent execute '!mkdir -p ~/.vim/tmp'
+
 set nocompatible
 set nobackup
+
+set backupdir=~/.vim/tmp//
+set directory=~/.vim/tmp//
 
 set enc=utf-8
 set fileformat=unix
