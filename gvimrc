@@ -1,5 +1,5 @@
 set cursorline
-colorscheme vilight
+colorscheme darkmate
 
 if has("gui_running")
 	"set guioptions=egmrt

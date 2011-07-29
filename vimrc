@@ -39,6 +39,9 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype php noremap <C-M> :w!<CR>:!/usr/bin/php %<CR>
 " check the php syntax
 autocmd Filetype php noremap <C-L> :!/usr/bin/php -l %<CR>
+" check for online documentation in php and html files
+autocmd FileType php set keywordprg=~/.vim/php_doc
+autocmd FileType html set keywordprg=~/.vim/php_doc
 
 " enable omnicomplete for php files
 filetype indent on
@@ -46,3 +49,5 @@ filetype plugin on
 au FileType php set omnifunc=phpcomplete#CompletePHP
 
 au BufRead,BufNewFile *.php set filetype=php.html
+
+:command -nargs=1 PHPman !~/.vim/php_doc <q-args>
