@@ -19,6 +19,7 @@ set visualbell
 
 set tabstop=4
 set shiftwidth=4
+set expandtab
 set autoindent
 set smartindent
 set smarttab
@@ -49,5 +50,8 @@ filetype plugin on
 au FileType php set omnifunc=phpcomplete#CompletePHP
 
 au BufRead,BufNewFile *.php set filetype=php.html
+
+" :h last-position-jump
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal!g`\"" | endif
 
 :command -nargs=1 PHPman !~/.vim/php_doc <q-args>
