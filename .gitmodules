@@ -13,3 +13,6 @@
 [submodule "bundle/zencoding-vim"]
 	path = bundle/zencoding-vim
 	url = https://github.com/mattn/zencoding-vim.git
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
