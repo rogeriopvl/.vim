@@ -33,6 +33,9 @@ set gfn=monaco:h12
 " show/hide all whitespace chars
 nmap <silent> <leader>s :set nolist!<CR>
 
+" Key to toggle nerdtree display
+map <leader>l :NERDTreeToggle<CR>
+
 " set spacing scheme for ruby files
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
