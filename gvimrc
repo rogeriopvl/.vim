@@ -1,5 +1,4 @@
 set cursorline
-colorscheme solarized
 
 if has("gui_running")
 	"set guioptions=egmrt
@@ -13,3 +12,5 @@ endif
 
 " for commant-t plugin
 let g:CommandTMaxFiles=10
+let g:CommandTAcceptSelectionMap = '<C-t>'
+let g:CommandTAcceptSelectionTabMap = '<CR>'
