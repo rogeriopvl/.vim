@@ -1,5 +1,5 @@
 set cursorline
-colorscheme darkmate
+colorscheme solarized
 
 if has("gui_running")
 	"set guioptions=egmrt
