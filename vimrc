@@ -44,6 +44,9 @@ nmap <silent> <leader>s :set nolist!<CR>
 " Key to toggle nerdtree display
 map <leader>l :NERDTreeToggle<CR>
 
+" Key to toggle tagbar display
+map <leader>k :TagbarToggle<CR>
+
 " set spacing scheme for ruby files
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
