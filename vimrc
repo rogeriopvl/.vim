@@ -61,6 +61,7 @@ filetype plugin on
 au FileType php set omnifunc=phpcomplete#CompletePHP
 
 au BufRead,BufNewFile *.php set filetype=php.html
+au BufRead,BufNewFile *.ejs set filetype=html
 
 " :h last-position-jump
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal!g`\"" | endif
