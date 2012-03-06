@@ -11,6 +11,6 @@ if has("gui_macvim")
 endif
 
 " for commant-t plugin
-let g:CommandTMaxFiles=10
+let g:CommandTMaxFiles=5000
 " let g:CommandTAcceptSelectionMap = '<C-t>'
 " let g:CommandTAcceptSelectionTabMap = '<CR>'
