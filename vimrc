@@ -33,7 +33,8 @@ set background=dark
 if has('gui_running')
     colorscheme solarized
 else
-    colorscheme desert
+    let g:solarized_termcolors=256    "default value is 16
+    colorscheme solarized
 endif
 
 set gfn=monaco:h12
@@ -47,6 +48,9 @@ map <leader>l :NERDTreeToggle<CR>
 " Key to toggle tagbar display
 map <leader>k :TagbarToggle<CR>
 
+" force syntax coloring of full file
+map <leader>k :syntax sync fromstart<CR>
+
 " set spacing scheme for ruby files
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
@@ -59,6 +63,9 @@ autocmd Filetype php noremap <C-L> :!/usr/bin/php -l %<CR>
 filetype indent on
 filetype plugin on
 au FileType php set omnifunc=phpcomplete#CompletePHP
+
+" force syntax highlight of the whole file (problem in big files)
+autocmd BufEnter * :syntax sync fromstart
 
 au BufRead,BufNewFile *.php set filetype=php.html
 au BufRead,BufNewFile *.ejs set filetype=html
