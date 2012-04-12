@@ -49,7 +49,7 @@ map <leader>l :NERDTreeToggle<CR>
 map <leader>k :TagbarToggle<CR>
 
 " force syntax coloring of full file
-map <leader>k :syntax sync fromstart<CR>
+map <leader>c :syntax sync fromstart<CR>
 
 " set spacing scheme for ruby files
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
