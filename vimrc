@@ -65,7 +65,7 @@ filetype plugin on
 au FileType php set omnifunc=phpcomplete#CompletePHP
 
 " force syntax highlight of the whole file (problem in big files)
-autocmd BufEnter * :syntax sync fromstart
+"autocmd BufEnter * :syntax sync fromstart
 
 au BufRead,BufNewFile *.php set filetype=php.html
 au BufRead,BufNewFile *.ejs set filetype=html
