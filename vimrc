@@ -30,12 +30,7 @@ set bs=start,indent,eol
 syntax enable
 set background=dark
 
-if has('gui_running')
-    colorscheme solarized
-else
-    let g:solarized_termcolors=256    "default value is 16
-    colorscheme solarized
-endif
+colorscheme solarized
 
 set gfn=monaco:h12
 
