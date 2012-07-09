@@ -34,6 +34,9 @@ colorscheme solarized
 
 set gfn=monaco:h12
 
+set laststatus=2
+let g:Powerline_symbols = 'fancy'
+
 " show/hide all whitespace chars
 nmap <silent> <leader>s :set nolist!<CR>
 
