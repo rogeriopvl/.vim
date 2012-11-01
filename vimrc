@@ -70,3 +70,6 @@ au BufRead,BufNewFile *.ejs set filetype=html
 
 " :h last-position-jump
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal!g`\"" | endif
+
+" for python files, avoid auto removal of identation in comments
+autocmd BufRead *.py inoremap # X<c-h>#<space>
