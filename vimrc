@@ -1,7 +1,7 @@
 silent execute '!mkdir -p ~/.vim/tmp'
 
 set nocompatible
-set filetype off
+filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
