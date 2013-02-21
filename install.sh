@@ -33,3 +33,6 @@ then
 else
     echo "Found .gvimrc file, skipping symlink creation."
 fi
+
+echo "Starting vim with BundleInstall to install all plugins..."
+vim +BundleInstall +qall
