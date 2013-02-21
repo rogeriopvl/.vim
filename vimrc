@@ -26,7 +26,6 @@ Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'pangloss/vim-javascript'
 Bundle 'docunext/closetag.vim'
-Bundle 'skammer/vim-css-color'
 
 filetype plugin indent on
 
