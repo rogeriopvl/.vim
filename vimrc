@@ -56,7 +56,11 @@ set bs=start,indent,eol
 syntax enable
 set background=dark
 
-colorscheme solarized
+try
+    colorscheme solarized
+catch /^Vim\%((\a\+)\)\=:E185/
+    colorscheme desert
+endtry
 
 set gfn=monaco:h12
 
