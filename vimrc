@@ -1,8 +1,35 @@
 silent execute '!mkdir -p ~/.vim/tmp'
 
-call pathogen#infect()
-
 set nocompatible
+set filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+" vim plugins
+
+Bundle 'scrooloose/nerdtree'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'mattn/zencoding-vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'majutsushi/tagbar'
+Bundle 'hallison/vim-markdown'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'groenewege/vim-less'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'mileszs/ack.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'pangloss/vim-javascript'
+Bundle 'docunext/closetag.vim'
+Bundle 'skammer/vim-css-color'
+
+filetype plugin indent on
+
 set nobackup
 
 set backupdir=~/.vim/tmp//
