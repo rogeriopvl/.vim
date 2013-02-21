@@ -6,7 +6,8 @@ This is my `.vim/` folder that contains all the plugins and configurations that 
 ### Install
 
 To install these configs just do a `git clone` in your home directory:
-	git clone git://github.com/rogeriopvl/.vim.git
+
+    git clone git://github.com/rogeriopvl/.vim.git
 
 Then run `install.sh` contained inside the repo:
 
