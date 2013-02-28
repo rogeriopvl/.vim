@@ -23,7 +23,6 @@ Bundle 'groenewege/vim-less'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'mileszs/ack.vim'
-Bundle 'scrooloose/syntastic'
 Bundle 'pangloss/vim-javascript'
 Bundle 'docunext/closetag.vim'
 
