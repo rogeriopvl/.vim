@@ -19,7 +19,7 @@ echo "OK"
 if [ ! -f ~/.vimrc ]
 then
     echo "Creating .vimrc symlink..."
-    ln -s ~/.vim/vimrc vimrc ~/.vimrc
+    ln -s ~/.vim/vimrc ~/.vimrc
     echo "OK"
 else
     echo "Found .vimrc file, skipping symlink creation."
