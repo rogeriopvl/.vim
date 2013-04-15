@@ -1,6 +1,7 @@
 silent execute '!mkdir -p ~/.vim/tmp'
 
 set nocompatible
+filetype on
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
@@ -25,6 +26,8 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'mileszs/ack.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'docunext/closetag.vim'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'Raimondi/delimitMate'
 
 filetype plugin indent on
 
@@ -39,6 +42,12 @@ set fileformat=unix
 set ignorecase
 set smartcase
 set incsearch
+
+" split windows
+set splitright
+set splitbelow
+
+set showmatch
 
 set nu! " show line numbers
 set ruler
@@ -65,6 +74,12 @@ set gfn=monaco:h12
 
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
+
+" disable gitgutter by default
+let g:gitgutter_enabled = 0
+
+" Toggle on/off gitgutter
+nmap <silent> <leader>g :GitGutterToggle<CR>
 
 " show/hide all whitespace chars
 nmap <silent> <leader>s :set nolist!<CR>
