@@ -33,6 +33,8 @@ filetype plugin indent on
 
 set nobackup
 
+set mouse=a
+
 set backupdir=~/.vim/tmp//
 set directory=~/.vim/tmp//
 

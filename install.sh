@@ -3,6 +3,8 @@
 # This script install vundle and symlinks in your home direcory pointing to
 # this vim settings folder.
 
+mkdir -p ~/.vim/bundle
+
 # install vundle
 if [ -d ~/.vim/bundle/vundle ]
 then
