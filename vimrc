@@ -1,3 +1,4 @@
+" save backup files in another folder
 silent execute '!mkdir -p ~/.vim/tmp'
 
 set nocompatible
@@ -11,7 +12,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " vim plugins
-
 Bundle 'scrooloose/nerdtree'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'mattn/zencoding-vim'
