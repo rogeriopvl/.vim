@@ -28,6 +28,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'docunext/closetag.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'Raimondi/delimitMate'
+Bundle 'ervandew/supertab'
 
 filetype plugin indent on
 
