@@ -51,6 +51,7 @@ set splitright
 set splitbelow
 
 set showmatch
+set cursorline
 
 set nu! " show line numbers
 set ruler
