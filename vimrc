@@ -29,6 +29,7 @@ Bundle 'docunext/closetag.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
+Bundle 'editorconfig/editorconfig-vim'
 
 filetype plugin indent on
 
@@ -121,3 +122,10 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal!g`
 
 " for python files, avoid auto removal of identation in comments
 autocmd BufRead *.py inoremap # X<c-h>#<space>
+
+" highlight extra whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd Syntax * syn match ExtraWhitespace /\s\+$/
