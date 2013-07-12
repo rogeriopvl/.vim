@@ -17,19 +17,19 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
-Bundle 'majutsushi/tagbar'
 Bundle 'hallison/vim-markdown'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'groenewege/vim-less'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'mileszs/ack.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'docunext/closetag.vim'
+" Bundle 'pangloss/vim-javascript'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
 Bundle 'editorconfig/editorconfig-vim'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'jelera/vim-javascript-syntax'
 
 filetype plugin indent on
 
@@ -83,6 +83,9 @@ let g:Powerline_symbols = 'fancy'
 " disable gitgutter by default
 let g:gitgutter_enabled = 0
 
+" Tell Ctrl-P to ignore some folders
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|components'
+
 " Toggle on/off gitgutter
 nmap <silent> <leader>g :GitGutterToggle<CR>
 
@@ -91,9 +94,6 @@ nmap <silent> <leader>s :set nolist!<CR>
 
 " Key to toggle nerdtree display
 map <leader>l :NERDTreeToggle<CR>
-
-" Key to toggle tagbar display
-map <leader>k :TagbarToggle<CR>
 
 " force syntax coloring of full file
 map <leader>c :syntax sync fromstart<CR>
