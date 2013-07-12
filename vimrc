@@ -29,7 +29,7 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'tomtom/tcomment_vim'
-Bundle 'jelera/vim-javascript-syntax'
+Bundle "pangloss/vim-javascript"
 
 filetype plugin indent on
 
