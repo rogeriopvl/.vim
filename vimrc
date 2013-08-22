@@ -30,6 +30,9 @@ Bundle 'ervandew/supertab'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle "pangloss/vim-javascript"
+Bundle "edsono/vim-matchit"
+Bundle "elixir-lang/vim-elixir"
+Bundle "dgryski/vim-godef"
 
 filetype plugin indent on
 
@@ -51,7 +54,7 @@ set incsearch
 set splitright
 set splitbelow
 
-set showmatch
+set showmatch matchtime=3
 set cursorline
 
 set nu! " show line numbers
