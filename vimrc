@@ -33,6 +33,8 @@ Bundle "pangloss/vim-javascript"
 Bundle "edsono/vim-matchit"
 Bundle "elixir-lang/vim-elixir"
 Bundle "dgryski/vim-godef"
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
 
 filetype plugin indent on
 
