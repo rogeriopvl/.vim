@@ -14,7 +14,7 @@ Bundle 'gmarik/vundle'
 " vim plugins
 Bundle 'scrooloose/nerdtree'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/emmet-vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'hallison/vim-markdown'
@@ -106,7 +106,7 @@ map <leader>c :syntax sync fromstart<CR>
 " set spacing scheme for ruby files
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
-" run php file with php cli 
+" run php file with php cli
 autocmd Filetype php noremap <C-M> :w!<CR>:!/usr/bin/php %<CR>
 " check the php syntax
 autocmd Filetype php noremap <C-L> :!/usr/bin/php -l %<CR>
