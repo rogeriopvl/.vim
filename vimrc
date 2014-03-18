@@ -15,26 +15,28 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'mattn/emmet-vim'
-Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'hallison/vim-markdown'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'groenewege/vim-less'
 Bundle 'kien/ctrlp.vim'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'mileszs/ack.vim'
-" Bundle 'pangloss/vim-javascript'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'tomtom/tcomment_vim'
-Bundle "pangloss/vim-javascript"
-Bundle "edsono/vim-matchit"
-Bundle "elixir-lang/vim-elixir"
-Bundle "dgryski/vim-godef"
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'pangloss/vim-javascript'
+Bundle 'edsono/vim-matchit'
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'dgryski/vim-godef'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
+Bundle 'walm/jshint.vim'
+Bundle 'bling/vim-airline'
+Bundle 'tpope/vim-fugitive'
 
 filetype plugin indent on
 
@@ -61,7 +63,7 @@ set cursorline
 
 set nu! " show line numbers
 set ruler
-set visualbell
+" set visualbell
 
 set tabstop=4
 set shiftwidth=4
@@ -73,6 +75,7 @@ set bs=start,indent,eol
 
 syntax enable
 set background=dark
+set colorcolumn=85
 
 try
     colorscheme solarized
@@ -83,13 +86,37 @@ endtry
 set gfn=monaco:h12
 
 set laststatus=2
-let g:Powerline_symbols = 'fancy'
+
+let g:airline_theme = 'luna'
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" airline symbols
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" Airline tabs
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+
+let g:airline#extensions#tabline#left_sep = '⮀'
+let g:airline#extensions#tabline#left_alt_sep = '⮁'
+let g:airline#extensions#tabline#right_sep = '⮂'
+let g:airline#extensions#tabline#right_alt_sep = '⮃'
 
 " disable gitgutter by default
 let g:gitgutter_enabled = 0
 
 " Tell Ctrl-P to ignore some folders
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|components'
+let g:ctrlp_custom_ignore = 'components\|node_modules\|.DS_Store$\|.git$\|.svn$\|bower_components$'
 
 " Toggle on/off gitgutter
 nmap <silent> <leader>g :GitGutterToggle<CR>
@@ -107,23 +134,23 @@ map <leader>c :syntax sync fromstart<CR>
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
 " run php file with php cli
-autocmd Filetype php noremap <C-M> :w!<CR>:!/usr/bin/php %<CR>
+" autocmd Filetype php noremap <C-M> :w!<CR>:!/usr/bin/php %<CR>
 " check the php syntax
-autocmd Filetype php noremap <C-L> :!/usr/bin/php -l %<CR>
+" autocmd Filetype php noremap <C-L> :!/usr/bin/php -l %<CR>
 
 " enable omnicomplete for php files
-filetype indent on
-filetype plugin on
-au FileType php set omnifunc=phpcomplete#CompletePHP
+" filetype indent on
+" filetype plugin on
+" au FileType php set omnifunc=phpcomplete#CompletePHP
 
 " force syntax highlight of the whole file (problem in big files)
-"autocmd BufEnter * :syntax sync fromstart
+autocmd BufEnter * :syntax sync fromstart
 
 au BufRead,BufNewFile *.php set filetype=php.html
 au BufRead,BufNewFile *.ejs set filetype=html
 
 " :h last-position-jump
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal!g`\"" | endif
+" au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal!g`\"" | endif
 
 " for python files, avoid auto removal of identation in comments
 autocmd BufRead *.py inoremap # X<c-h>#<space>
