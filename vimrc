@@ -87,7 +87,7 @@ set gfn=monaco:h12
 
 set laststatus=2
 
-let g:airline_theme = 'luna'
+" let g:airline_theme = 'luna'
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
@@ -150,7 +150,7 @@ au BufRead,BufNewFile *.php set filetype=php.html
 au BufRead,BufNewFile *.ejs set filetype=html
 
 " :h last-position-jump
-" au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal!g`\"" | endif
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal!g`\"" | endif
 
 " for python files, avoid auto removal of identation in comments
 autocmd BufRead *.py inoremap # X<c-h>#<space>
