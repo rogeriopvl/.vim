@@ -1,4 +1,5 @@
 set cursorline
+set visualbell
 
 if has("gui_running")
 "set guioptions=egmrt
