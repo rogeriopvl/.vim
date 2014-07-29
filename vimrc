@@ -47,6 +47,17 @@ endtry
 
 set gfn=monaco:h12
 
+" The Silver Searcher
+if executable('ag')
+    " Use ag over grep
+    set grepprg=ag\ --nogroup\ --nocolor
+endif
+
+" open quickfix automatically for :grep :make etc
+" autocmd QuickFixCmdPost * :cwindow 5
+
+" create Ag command and open results in cwindow
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 
 " show/hide all whitespace chars
 nmap <silent> <leader>s :set nolist!<CR>
