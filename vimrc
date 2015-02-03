@@ -59,6 +59,8 @@ endif
 " create Ag command and open results in cwindow
 command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 
+imap § <C-y>,
+
 " show/hide all whitespace chars
 nmap <silent> <leader>s :set nolist!<CR>
 
