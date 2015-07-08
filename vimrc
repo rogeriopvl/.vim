@@ -45,7 +45,7 @@ catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme desert
 endtry
 
-set gfn=monaco:h12
+set guifont=monaco:h12
 
 " The Silver Searcher
 if executable('ag')
@@ -67,8 +67,9 @@ nmap <silent> <leader>s :set nolist!<CR>
 " force syntax coloring of full file
 map <leader>c :syntax sync fromstart<CR>
 
-" set spacing scheme for ruby files
+" set spacing scheme for ruby and js files
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 " force syntax highlight of the whole file (problem in big files)
 autocmd BufEnter * :syntax sync fromstart
