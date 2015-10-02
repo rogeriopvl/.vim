@@ -6,8 +6,8 @@ if has("gui_running")
 set guioptions=aAce
 endif
 
-set guifont=Menlo:h12
-set linespace=4
+set guifont=Hack:h12
+" set linespace=4
 
 " Disable print shortcut
 macmenu File.Print key=<nop>
