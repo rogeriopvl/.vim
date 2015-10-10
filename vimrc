@@ -15,7 +15,11 @@ set fileformat=unix
 
 set ignorecase
 set smartcase
+
 set incsearch
+set hlsearch
+"This unsets the last search pattern register by hitting return
+nnoremap <CR> :noh<CR><CR>
 
 " split windows
 set splitright
@@ -24,7 +28,7 @@ set splitbelow
 set showmatch matchtime=3
 set cursorline
 
-set nu! " show line numbers
+set number " show line numbers
 set ruler
 
 set tabstop=4
@@ -34,6 +38,7 @@ set autoindent
 set smartindent
 set smarttab
 set bs=start,indent,eol
+set wildmenu
 
 syntax enable
 set background=dark
