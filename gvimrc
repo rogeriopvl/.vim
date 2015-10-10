@@ -7,7 +7,7 @@ set guioptions=aAce
 endif
 
 set guifont=Hack:h12
-" set linespace=4
+set linespace=2
 
 " Disable print shortcut
 macmenu File.Print key=<nop>

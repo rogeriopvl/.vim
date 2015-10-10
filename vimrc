@@ -71,11 +71,15 @@ map <leader>c :syntax sync fromstart<CR>
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
+" disable cursorline for ruby files (slows down vim... wtf)
+autocmd Filetype ruby set nocursorline
+
 " force syntax highlight of the whole file (problem in big files)
 autocmd BufEnter * :syntax sync fromstart
 
 au BufRead,BufNewFile *.php set filetype=php.html
 au BufRead,BufNewFile *.ejs set filetype=html
+au BufRead,BufNewFile *.hbs set filetype=html
 
 " :h last-position-jump
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal!g`\"" | endif
