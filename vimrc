@@ -45,7 +45,7 @@ set background=dark
 set colorcolumn=85
 
 try
-    colorscheme solarized
+    colorscheme dracula
 catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme desert
 endtry
@@ -116,8 +116,8 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal!g`
 
 " This maps esc esc to exit terminal mode.
 if has('nvim')
-    "tnoremap <Leader>e <C-\><C-n>
-    :tnoremap <Esc><Esc> <C-\><C-n>
+    tnoremap <Leader>e <C-\><C-n>
+    ":tnoremap <Esc><Esc> <C-\><C-n>
 endif
 
 " Load matchit.vim, but only if the user hasn't installed a newer version.
