@@ -42,7 +42,7 @@ set wildmenu
 
 syntax enable
 set background=dark
-set colorcolumn=85
+set colorcolumn=80
 
 try
     colorscheme dracula
@@ -69,6 +69,9 @@ set display+=lastline
 
 augroup vimrc_autocmd
     autocmd!
+
+    " add spell checking and wrap at 72 columns to git commit messages
+    autocmd Filetype gitcommit setlocal spell textwidth=72
 
     " set spacing scheme for ruby and js files
     autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
