@@ -91,9 +91,9 @@ augroup vimrc_autocmd
     autocmd BufRead *.py inoremap # X<c-h>#<space>
 
     " neomake standard
-    let g:neomake_javascript_enabled_makers = ['standard']
-    let g:neomake_jsx_enabled_makers = ['standard']
-    autocmd! BufWritePost,BufEnter * Neomake
+    " let g:neomake_javascript_enabled_makers = ['standard']
+    " let g:neomake_jsx_enabled_makers = ['standard']
+    " autocmd! BufWritePost,BufEnter * Neomake
 augroup END
 
 " create Ag command and open results in cwindow
