@@ -50,7 +50,10 @@ catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme desert
 endtry
 
-set guifont=Hack:h12
+if has("gui_running")
+    set guifont=Hack:h12
+    set fuoptions=maxvert,maxhorz
+endif
 
 " The Silver Searcher
 if executable('ag')
