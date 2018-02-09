@@ -26,7 +26,6 @@ set splitright
 set splitbelow
 
 set showmatch matchtime=3
-set cursorline
 
 set number " show line numbers
 set ruler
@@ -53,6 +52,7 @@ endtry
 if has("gui_running")
     set guifont=Hack:h12
     set fuoptions=maxvert,maxhorz
+    set cursorline
 endif
 
 " The Silver Searcher
