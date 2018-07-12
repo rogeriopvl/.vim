@@ -135,3 +135,6 @@ endif
 if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
   set t_Co=16
 endif
+
+" needed for truecolor support (dracula theme)
+set termguicolors
