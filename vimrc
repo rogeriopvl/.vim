@@ -1,7 +1,119 @@
 " save backup files in another folder
 silent execute '!mkdir -p ~/.vim/tmp'
 
-source $HOME/.vim/vundle.config
+let mapleader = "\<Space>"
+
+call plug#begin('~/.vim/plugged')
+" ***********************************************
+" PLUGINS
+" ***********************************************
+
+" Color Themes
+
+Plug 'altercation/vim-colors-solarized'
+Plug 'tomasiser/vim-code-dark'
+Plug 'dracula/vim'
+
+" Features
+
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'Raimondi/delimitMate'
+Plug 'ervandew/supertab'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tomtom/tcomment_vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'gko/vim-coloresque'
+Plug 'tpope/vim-endwise'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'w0rp/ale'
+
+" Language support
+
+Plug 'mattn/emmet-vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+
+" ********************************************
+" END OF PLUGINS
+" ********************************************
+call plug#end()
+
+" PLUGIN CONFIG ***********************************************
+
+" set fzf runtime
+set rtp+=/usr/local/opt/fzf
+
+filetype plugin indent on
+set laststatus=2
+" airline display time
+" let g:airline_section_b = '%{strftime("%R")}'
+
+" let g:airline_theme = 'luna'
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" airline symbols
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" Airline tabs
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+
+let g:airline#extensions#tabline#left_sep = '⮀'
+let g:airline#extensions#tabline#left_alt_sep = '⮁'
+let g:airline#extensions#tabline#right_sep = '⮂'
+let g:airline#extensions#tabline#right_alt_sep = '⮃'
+
+" map this weird mac key to emmet's command
+imap § <C-y>,
+
+" enable <CR> indent in delimitMate
+let delimitMate_expand_cr=1
+
+" Toggle on/off gitgutter
+nmap <silent> <leader>g :GitGutterToggle<CR>
+
+" NERDTree configs
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let NERDTreeAutoDeleteBuffer = 1
+
+" vim-jsx add support for js files (not only jsx)
+let g:jsx_ext_required = 0
+
+" Disable entities encoding in HTML files
+let g:tcomment#replacements_xml = {}
+
+let g:ale_linters = {}
+let g:ale_linters['javascript'] = ['eslint']
+
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+
+let g:ale_javascript_prettier_use_local_config = 1
+
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '.'
+let g:ale_lint_on_enter = 0
+
+" END OF PLUGIN CONFIG ******************************
 
 set nobackup
 
@@ -99,18 +211,13 @@ augroup vimrc_autocmd
     " autocmd! BufWritePost,BufEnter * Neomake
 augroup END
 
-" create Ag command and open results in cwindow
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-
-imap § <C-y>,
-
 " show/hide all whitespace chars
 nmap <silent> <leader>s :set nolist!<CR>
 
 " force syntax coloring of full file
 map <leader>c :syntax sync fromstart<CR>
 
-
+noremap <leader>pt :NERDTreeFind<CR>
 
 au BufRead,BufNewFile *.ejs set filetype=html
 au BufRead,BufNewFile *.hbs set filetype=html

@@ -6,7 +6,7 @@ if has("gui_running")
 set guioptions=aAce
 endif
 
-set guifont=Hack:h12
+set guifont=Source\ Code\ Pro:h12
 set linespace=2
 
 " Disable print shortcut
