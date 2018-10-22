@@ -217,7 +217,11 @@ nmap <silent> <leader>s :set nolist!<CR>
 " force syntax coloring of full file
 map <leader>c :syntax sync fromstart<CR>
 
-noremap <leader>pt :NERDTreeFind<CR>
+noremap <leader>t :NERDTreeToggle<CR>
+noremap <leader>f :NERDTreeFind<CR>
+noremap <leader>p :Files<CR>
+noremap <leader>b :Buffers<CR>
+noremap <leader>a :Ag<CR>
 
 au BufRead,BufNewFile *.ejs set filetype=html
 au BufRead,BufNewFile *.hbs set filetype=html
