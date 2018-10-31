@@ -207,10 +207,8 @@ augroup vimrc_autocmd
     " for python files, avoid auto removal of identation in comments
     autocmd BufRead *.py inoremap # X<c-h>#<space>
 
-    " neomake standard
-    " let g:neomake_javascript_enabled_makers = ['standard']
-    " let g:neomake_jsx_enabled_makers = ['standard']
-    " autocmd! BufWritePost,BufEnter * Neomake
+    " [nvim] remove line numbers in terminal mode
+    au TermOpen * setlocal nonumber norelativenumber
 augroup END
 
 " show/hide all whitespace chars
@@ -224,6 +222,9 @@ noremap <leader>f :NERDTreeFind<CR>
 noremap <leader>p :Files<CR>
 noremap <leader>b :Buffers<CR>
 noremap <leader>a :Ag<CR>
+
+" [nvim] map ESC to exit insert mode on terminal
+:tnoremap <Esc> <C-\><C-n>
 
 au BufRead,BufNewFile *.ejs set filetype=html
 au BufRead,BufNewFile *.hbs set filetype=html
