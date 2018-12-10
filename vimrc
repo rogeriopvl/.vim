@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
 " Color Themes
 
 Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'tomasiser/vim-code-dark'
 Plug 'dracula/vim'
 
@@ -19,9 +20,9 @@ Plug 'dracula/vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
 Plug 'Raimondi/delimitMate'
 Plug 'ervandew/supertab'
 Plug 'editorconfig/editorconfig-vim'
@@ -183,6 +184,9 @@ if !&sidescrolloff
 endif
 
 set display+=lastline
+
+set autoread
+au FocusGained * :checktime
 
 augroup vimrc_autocmd
     autocmd!
