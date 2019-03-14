@@ -34,6 +34,7 @@ Plug 'gko/vim-coloresque'
 Plug 'tpope/vim-endwise'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'w0rp/ale'
+Plug 'rhysd/git-messenger.vim'
 
 " Language support
 
