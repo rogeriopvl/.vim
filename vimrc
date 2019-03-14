@@ -227,6 +227,7 @@ noremap <leader>f :NERDTreeFind<CR>
 noremap <leader>p :Files<CR>
 noremap <leader>b :Buffers<CR>
 noremap <leader>a :Ag<CR>
+noremap <leader>bl :GitMessenger<CR>
 
 " [nvim] map ESC to exit insert mode on terminal
 :tnoremap <Esc> <C-\><C-n>
