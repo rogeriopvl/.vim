@@ -76,6 +76,7 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 " Airline tabs
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#show_buffers = 0
 
 let g:airline#extensions#tabline#left_sep = '⮀'
@@ -108,6 +109,7 @@ let g:ale_linters['javascript'] = ['eslint']
 
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fixers['css'] = ['prettier']
 
 let g:ale_javascript_prettier_use_local_config = 1
 
