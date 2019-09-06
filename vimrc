@@ -215,7 +215,9 @@ augroup vimrc_autocmd
     autocmd BufRead *.py inoremap # X<c-h>#<space>
 
     " [nvim] remove line numbers in terminal mode
-    au TermOpen * setlocal nonumber norelativenumber
+    if has('nvim')
+        au TermOpen * setlocal nonumber norelativenumber
+    endif
 augroup END
 
 " show/hide all whitespace chars
@@ -230,6 +232,7 @@ noremap <leader>p :Files<CR>
 noremap <leader>b :Buffers<CR>
 noremap <leader>a :Ag<CR>
 noremap <leader>bl :GitMessenger<CR>
+noremap <leader>fm :ALEFix<CR>
 
 " [nvim] map ESC to exit insert mode on terminal
 :tnoremap <Esc> <C-\><C-n>
@@ -257,6 +260,9 @@ endif
 if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
   set t_Co=16
 endif
+
+" for better vimdiff
+set diffopt+=algorithm:patience
 
 " needed for truecolor support (dracula theme)
 set termguicolors
