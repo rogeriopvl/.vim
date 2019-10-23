@@ -5,18 +5,6 @@
 
 mkdir -p ~/.vim/bundle
 
-# install vundle
-if [ -d ~/.vim/bundle/vundle ]
-then
-    echo "Found bundle/vundle folder, removing..."
-    rm -fr ~/.vim/bundle/vundle
-    echo "OK"
-fi
-
-echo "Cloning vundle plugin into bundle/vundle"
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-echo "OK"
-
 # if vimrc does not exist, create symlink
 if [ ! -f ~/.vimrc ]
 then
@@ -36,5 +24,18 @@ else
     echo "Found .gvimrc file, skipping symlink creation."
 fi
 
-echo "Starting vim with BundleInstall to install all plugins..."
-vim +BundleInstall +qall
+# migrate vim config to neovim
+if [ ! -f ~/.config/nvim/init.vim ]
+then
+    echo "Creating ~/.config/nvim/init.vim symlink..."
+    mkdir -p ~/.config/nvim
+    ln -s ~/.vim/init.vim ~/.config/nvim/init.vim
+    echo "OK"
+else
+    echo "Found .vimrc file, skipping symlink creation."
+fi
+
+
+
+#echo "Starting vim with BundleInstall to install all plugins..."
+#vim +BundleInstall +qall
