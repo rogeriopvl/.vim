@@ -30,18 +30,20 @@ Plug 'tomtom/tcomment_vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'gko/vim-coloresque'
 Plug 'tpope/vim-endwise'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'w0rp/ale'
 Plug 'rhysd/git-messenger.vim'
+Plug 'norcalli/nvim-colorizer.lua'
 
 " Language support
 
 Plug 'mattn/emmet-vim'
-Plug 'sheerun/vim-polyglot'
-Plug 'pangloss/vim-javascript'
+" we have to remove the indent file after install because it conflicts with
+" vim-jsx, breaking indentation for all js files
+Plug 'sheerun/vim-polyglot', { 'do': 'rm ~/.vim/plugged/vim-polyglot/after/indent/javascript.vim' }
 Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
 
 " ********************************************
 " END OF PLUGINS
@@ -268,3 +270,5 @@ set diffopt+=algorithm:patience
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+lua require'colorizer'.setup()
