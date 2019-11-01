@@ -14,6 +14,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'lifepillar/vim-solarized8'
 Plug 'tomasiser/vim-code-dark'
 Plug 'dracula/vim'
+Plug 'Rigellute/shades-of-purple.vim'
 
 " Features
 
