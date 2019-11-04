@@ -100,6 +100,7 @@ nmap <silent> <leader>g :GitGutterToggle<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeShowHidden=1
 
 " vim-jsx add support for js files (not only jsx)
 let g:jsx_ext_required = 0
@@ -120,7 +121,7 @@ let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
 let g:ale_lint_on_enter = 0
 
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 
 " END OF PLUGIN CONFIG ******************************
 
