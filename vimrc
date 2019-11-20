@@ -61,34 +61,13 @@ set laststatus=2
 " airline display time
 " let g:airline_section_b = '%{strftime("%R")}'
 
-" let g:airline_theme = 'luna'
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-" airline symbols
-let g:airline_left_sep = '⮀'
-let g:airline_left_alt_sep = '⮁'
-let g:airline_right_sep = '⮂'
-let g:airline_right_alt_sep = '⮃'
-let g:airline_symbols.branch = '⭠'
-let g:airline_symbols.readonly = '⭤'
-let g:airline_symbols.linenr = '⭡'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_powerline_fonts = 1
+" let g:airline_theme = 'minimalist'
 
 " Airline tabs
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#show_buffers = 0
-
-let g:airline#extensions#tabline#left_sep = '⮀'
-let g:airline#extensions#tabline#left_alt_sep = '⮁'
-let g:airline#extensions#tabline#right_sep = '⮂'
-let g:airline#extensions#tabline#right_alt_sep = '⮃'
-
-" map this weird mac key to emmet's command
-imap § <C-y>,
 
 " enable <CR> indent in delimitMate
 let delimitMate_expand_cr=1
@@ -212,9 +191,6 @@ augroup vimrc_autocmd
     au InsertLeave * match ExtraWhitespace /\s\+$/
     autocmd Syntax * syn match ExtraWhitespace /\s\+$/
 
-    " disable cursorline for ruby files (slows down vim... wtf)
-    autocmd Filetype ruby set nocursorline
-
     " for python files, avoid auto removal of identation in comments
     autocmd BufRead *.py inoremap # X<c-h>#<space>
 
@@ -230,6 +206,7 @@ nmap <silent> <leader>s :set nolist!<CR>
 " force syntax coloring of full file
 map <leader>c :syntax sync fromstart<CR>
 
+inoremap § <Esc>
 noremap <leader>t :NERDTreeToggle<CR>
 noremap <leader>f :NERDTreeFind<CR>
 noremap <leader>p :Files<CR>
@@ -237,6 +214,9 @@ noremap <leader>b :Buffers<CR>
 noremap <leader>a :Ag<CR>
 noremap <leader>bl :GitMessenger<CR>
 noremap <leader>fm :ALEFix<CR>
+" custom emmet shortcut
+imap <leader>e <C-y>,
+
 
 " [nvim] map ESC to exit insert mode on terminal
 :tnoremap <Esc> <C-\><C-n>
@@ -246,14 +226,6 @@ au BufRead,BufNewFile *.hbs set filetype=html
 
 " :h last-position-jump
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal!g`\"" | endif
-
-
-
-" This maps esc esc to exit terminal mode.
-if has('nvim')
-    tnoremap <Leader>e <C-\><C-n>
-    ":tnoremap <Esc><Esc> <C-\><C-n>
-endif
 
 " Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
@@ -272,5 +244,12 @@ set diffopt+=algorithm:patience
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" customize Dracula theme to make it look like vscode dracula
+" use the following command to know the tokens name
+" :echo synIDattr(synID(line("."), col("."), 1), "name")
+hi! link jsObjectColon DraculaPink
+hi! link jsGlobalNodeObjects DraculaCyan
+hi! link jsFuncArgs DraculaOrange
 
 lua require'colorizer'.setup()
