@@ -215,7 +215,7 @@ noremap <leader>a :Ag<CR>
 noremap <leader>bl :GitMessenger<CR>
 noremap <leader>fm :ALEFix<CR>
 " custom emmet shortcut
-imap <leader>e <C-y>,
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 
 " [nvim] map ESC to exit insert mode on terminal
