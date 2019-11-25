@@ -206,7 +206,12 @@ nmap <silent> <leader>s :set nolist!<CR>
 " force syntax coloring of full file
 map <leader>c :syntax sync fromstart<CR>
 
+nnoremap § <Esc>
+vnoremap § <Esc>gV
+onoremap § <Esc>
+cnoremap § <C-C><Esc>
 inoremap § <Esc>
+
 noremap <leader>t :NERDTreeToggle<CR>
 noremap <leader>f :NERDTreeFind<CR>
 noremap <leader>p :Files<CR>
