@@ -42,7 +42,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'mattn/emmet-vim'
 " we have to remove the indent file after install because it conflicts with
 " vim-jsx, breaking indentation for all js files
-Plug 'sheerun/vim-polyglot', { 'do': 'rm ~/.vim/plugged/vim-polyglot/after/indent/javascript.vim' }
+Plug 'sheerun/vim-polyglot', { 'tag': 'v4.1.1', 'do': 'rm ~/.vim/plugged/vim-polyglot/after/indent/javascript.vim' }
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 
@@ -92,6 +92,7 @@ let g:ale_linters['javascript'] = ['eslint']
 
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fixers['json'] = ['prettier']
 let g:ale_fixers['css'] = ['prettier']
 
 let g:ale_javascript_prettier_use_local_config = 1
@@ -219,9 +220,6 @@ noremap <leader>b :Buffers<CR>
 noremap <leader>a :Ag<CR>
 noremap <leader>bl :GitMessenger<CR>
 noremap <leader>fm :ALEFix<CR>
-" custom emmet shortcut
-imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-
 
 " [nvim] map ESC to exit insert mode on terminal
 :tnoremap <Esc> <C-\><C-n>
@@ -256,5 +254,6 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 hi! link jsObjectColon DraculaPink
 hi! link jsGlobalNodeObjects DraculaCyan
 hi! link jsFuncArgs DraculaOrange
+
 
 lua require'colorizer'.setup()
