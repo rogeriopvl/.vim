@@ -15,6 +15,8 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'tomasiser/vim-code-dark'
 Plug 'dracula/vim'
 Plug 'Rigellute/shades-of-purple.vim'
+Plug 'arzg/vim-colors-xcode'
+Plug 'wadackel/vim-dogrun'
 
 " Features
 
@@ -42,7 +44,8 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'mattn/emmet-vim'
 " we have to remove the indent file after install because it conflicts with
 " vim-jsx, breaking indentation for all js files
-Plug 'sheerun/vim-polyglot', { 'tag': 'v4.1.1', 'do': 'rm ~/.vim/plugged/vim-polyglot/after/indent/javascript.vim' }
+" Plug 'sheerun/vim-polyglot', { 'tag': 'v4.1.1', 'do': 'rm ~/.vim/plugged/vim-polyglot/after/indent/javascript.vim' }
+Plug 'sheerun/vim-polyglot', { 'do': 'rm ~/.vim/plugged/vim-polyglot/after/indent/javascript.vim' }
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 
@@ -140,6 +143,7 @@ set smartindent
 set smarttab
 set bs=start,indent,eol
 set wildmenu
+set nofoldenable
 
 syntax enable
 set background=dark
@@ -255,5 +259,6 @@ hi! link jsObjectColon DraculaPink
 hi! link jsGlobalNodeObjects DraculaCyan
 hi! link jsFuncArgs DraculaOrange
 
-
-lua require'colorizer'.setup()
+if has('nvim')
+    lua require'colorizer'.setup()
+endif

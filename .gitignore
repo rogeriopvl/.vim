@@ -4,3 +4,4 @@
 tmp/*
 .VimballRecord
 plugged/*
+*.old
