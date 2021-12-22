@@ -45,7 +45,7 @@ Plug 'mattn/emmet-vim'
 " we have to remove the indent file after install because it conflicts with
 " vim-jsx, breaking indentation for all js files
 " Plug 'sheerun/vim-polyglot', { 'tag': 'v4.1.1', 'do': 'rm ~/.vim/plugged/vim-polyglot/after/indent/javascript.vim' }
-Plug 'sheerun/vim-polyglot', { 'do': 'rm ~/.vim/plugged/vim-polyglot/after/indent/javascript.vim' }
+Plug 'sheerun/vim-polyglot', { 'tag': 'v4.1.1', 'do': 'rm ~/.vim/plugged/vim-polyglot/after/indent/javascript.vim' }
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 
@@ -155,8 +155,8 @@ catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme desert
 endtry
 
-if has("gui_running")
-    set guifont=Hack:h12
+if has('gui_macvim')
+    set guifont=Fira\ Mono:h12
     set fuoptions=maxvert,maxhorz
     set cursorline
 endif
@@ -258,6 +258,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 hi! link jsObjectColon DraculaPink
 hi! link jsGlobalNodeObjects DraculaCyan
 hi! link jsFuncArgs DraculaOrange
+hi Normal guibg=#191a21
 
 if has('nvim')
     lua require'colorizer'.setup()
